@@ -40,18 +40,14 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-#
-# \[\033[01;32m\] = Bold Green (User & Host)
-# \[\033[01;34m\] = Bold Blue (Current working directory)
-# \[\033[01;33m\] = Bold Yellow (Git branch name)
 
-# \[\033[00m\] = Reset colors back to standard text
+# Colors from: https://misc.flogisoft.com/bash/tip_colors_and_formatting#colors2
 
+# Set PS1 prompt with a green user@host, bold white directory, bold blue Git branch
+# PS1="\[\033[32m\]\u@\h[\033[1;00m\]\[\033[01;01m\]:\w\[\033[01;34m\]\$(parse_git_branch)\[\033[00m\]\$ "
 
-
-
-# Set PS1 prompt with a cyan directory, yellow Git branch, and a clean layout
-PS1="\[\033[32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[01;33m\]\$(parse_git_branch)\[\033[00m\]\$ "
+#North & South Colors
+PS1="\[\033[38;5;208m\]\u\[\033[38;5;237m\]@\[\033[38;5;208m\]\h[\033[1;00m\]\[\033[01;01m\]:\w\[\033[01;34m\]\$(parse_git_branch)\[\033[00m\]\$ "
 EOD;
 
 echo $prompt_text >> ~/.bashrc
