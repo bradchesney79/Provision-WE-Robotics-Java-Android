@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+GITEMAIL=$(grep "^GITEMAIL=" config.txt | cut -d"=" -f2-)
+GITNAME=$(grep "^GITNAME=" config.txt | cut -d"=" -f2-)
+
 mkdir -p ~/.ssh/github/
 
 # nohup ssh-agent -s &
 
-ssh-keygen -t ed25519 -C "you@example.com" -f ~/.ssh/github/id_ed25519 -P ""
+ssh-keygen -t ed25519 -C $GITEMAIL -f ~/.ssh/github/id_ed25519 -P ""
 
 ssh-add ~/.ssh/github/id_ed25519
 
@@ -20,8 +23,8 @@ git config --global mergetool.kdiff3 'kdiff3 "$BASE" "$LOCAL" "$REMOTE" -o "$MER
 git config --global merge.tool kdiff3
 git config --global mergetool.prompt false
 
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
+git config --global user.email $GITEMAIL
+git config --global user.name $GITNAME
 
 sudo curl -o /usr/local/bin/git-completion.bash https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-completion.bash
 
@@ -67,3 +70,9 @@ sudo add-apt-repository ppa:maarten-fonville/android-studio
 sudo apt-get -y update
 
 sudo apt-get install -y android-studio
+
+echo "===== github.com =============" >> /home/$USER/Desktop/post-install-resources.txt
+echo "" >> /home/$USER/Desktop/post-install-resources.txt
+echo "Don't forget to add the pubkey to github under settings." >> /home/$USER/Desktop/post-install-resources.txt
+echo "" >> /home/$USER/Desktop/post-install-resources.txt
+echo "==============================" >> /home/$USER/Desktop/post-install-resources.txt
