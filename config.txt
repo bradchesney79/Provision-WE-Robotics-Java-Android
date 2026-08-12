@@ -1,0 +1,8 @@
+PROVISIONING CONFIG FILE
+This and all the other files assume that you will not try to hack yourself and that you are a low value target not worth the effort to "hack" by others.
+
+#The email for the github account
+GITEMAIL=you@example.com
+
+#The actual government name of the github user or a user alias or handle or gamertag
+GITNAME=Your name
