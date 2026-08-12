@@ -47,13 +47,6 @@ parse_git_branch() {
 
 # Colors from: https://misc.flogisoft.com/bash/tip_colors_and_formatting#colors2
 
-# Set PS1 prompt with a green user@host, bold white directory, bold blue Git branch
-# PS1="\[\033[32m\]\u@\h[\033[1;00m\]\[\033[01;01m\]:\w\[\033[01;34m\]\[$(parse_git_branch)\]\[\033[00m\]\$ "
-
-
-#Green Blue Missing git branch
-#PS1="\[\033[38;5;208m\]\u\[\033[38;5;237m\]@\[\033[38;5;208m\]\h\[\033[01;01m\]:\w\[\033[01;34m\]\[$(parse_git_branch)\]\[\033[00m\]\$ "
-
 echo '
 
 #North & South Colors in the terminal command prompt
