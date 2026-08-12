@@ -61,7 +61,7 @@ mkdir ~/code
 
 ===== github.com =============
 
-Don't forget to add the pubkey to the github website settings for SSH.
+Don't forget to add the pubkey to the github website settings for SSH. Look in ~/.ssh/github
 
 Then open the terminal, cd ~/code, git clone git@github.com:FIRST-Tech-Challenge/FtcRobotController.git
 
