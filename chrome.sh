@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+
+sudo apt-get update
+sudo apt-get -y install google-chrome-stable
+
+# install extensions via terminal
+
+# fill the array with the needed extensions
+# key=["extension_name"] value="extension_ID"
+
+declare -A EXTlist=(
+    ["bitwarden"]="nngceckbapebfimnlniiiahkandclblb"
+)
+
+sudo mkdir -p /opt/google/chrome/extensions
+
+for i in "${!EXTlist[@]}"; do
+    # echo "Key: $i value: ${EXTlist[$i]}"
+    echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' | sudo tee /opt/google/chrome/extensions/${EXTlist[$i]}.json
+done
