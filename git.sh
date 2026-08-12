@@ -64,8 +64,12 @@ PS1="\[\033[38;5;208m\]\u@\[\033[38;5;208m\]\h\[\033[1;00m\]\[\033[01;01m\]:\w\[
 
 echo "
 
+mkdir ~/code
+
 ===== github.com =============
 
-Don't forget to add the pubkey to github under settings.
+Don't forget to add the pubkey to the github website settings for SSH.
+
+Then open the terminal, cd ~/code, git clone git@github.com:FIRST-Tech-Challenge/FtcRobotController.git
 
 ==============================" | tee -a ~/Desktop/post-install-resources.txt
