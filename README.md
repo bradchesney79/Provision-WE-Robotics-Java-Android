@@ -41,3 +41,5 @@ Follow the instructions in post-install-resources.txt in the Desktop directory--
 =====
 Your SSH key for github will be in ~/.ssh/github/
 You want the pub key, look for the filename with ".pub"
+
+=====
