@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+if command -v snap &> /dev/null; then
+
 #Remove snap
 
 #To see installed snaps, use: snap list
@@ -19,3 +21,5 @@ sudo snap remove --purge core22
 sudo snap remove --purge core24
 
 sudo snap remove --purge snapd
+
+fi

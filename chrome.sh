@@ -21,3 +21,13 @@ for i in "${!EXTlist[@]}"; do
     # echo "Key: $i value: ${EXTlist[$i]}"
     echo '{"external_update_url": "https://clients2.google.com/service/update2/crx"}' | sudo tee /opt/google/chrome/extensions/${EXTlist[$i]}.json
 done
+
+sudo mkdir -p /etc/opt/chrome/policies/managed
+
+echo '{
+  "ExtensionSettings": {
+    "nngceckbapebfimnlniiiahkandclblb": {
+      "toolbar_pin": "force_pinned"
+    }
+  }
+}' | sudo tee /etc/opt/chrome/policies/managed/extension_pin.json
