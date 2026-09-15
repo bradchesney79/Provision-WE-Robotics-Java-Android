@@ -12,4 +12,4 @@ Signed-By: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/e
 
 sudo apt clean && sudo apt autoclean && sudo apt update
 
-sudo apt-get -y install edge
+sudo apt-get -y install microsoft-edge-stable
