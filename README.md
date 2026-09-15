@@ -17,6 +17,8 @@ Order of scripts to run:
 
 first-thing.sh
 
+optional-kde-settings.sh
+
 remove-snap.sh
 
 sublime-text.sh
