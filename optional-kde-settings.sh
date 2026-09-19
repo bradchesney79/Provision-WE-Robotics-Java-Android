@@ -20,3 +20,13 @@ sed -i -E "s|launchers.*|launchers=applications:systemsettings.desktop,applicati
 #kwallet .kwl files are only configurable via gui, turning off due to this low security needs application
 
 kwriteconfig6 --file kwalletrc --group 'Wallet' --key 'Enabled' 'false'
+
+sed -i -E "s|launchers.*|launchers=applications:systemsettings.desktop,applications:org.kde.konsole.desktop,preferred://filemanager,preferred://browser,applications:org.kde.kate.desktop,preferred:|" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+
+#use gearman
+
+flatpak remote-add --if-not-exists flathub https://flathub.org
+
+flatpak install flathub it.mijorus.gearlever
+
+flatpak run it.mijorus.gearlever --integrate ~/Applications/Cura.AppImage

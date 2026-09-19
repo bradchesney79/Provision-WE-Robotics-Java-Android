@@ -9,7 +9,7 @@ sudo apt-get -y upgrade
 #
 echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections && sudo apt-get install -y ttf-mscorefonts-installer
 
-sudo apt-get -y install curl filezilla gimp git libreoffice okular vim vlc
+sudo apt-get -y install curl filezilla flatpak gimp git libreoffice okular vim vlc
 
 #Install a java version manager
 
@@ -32,7 +32,6 @@ nvm install --lts
 nvm install node
 nvm use node
 
-<<<<<<< HEAD
 #Configure console to disable bracketed paste
 #The unintuitive default behavior for pasting bracketed text is [ctrl] + [shift] + v
 #This allows pasting more clipboard contents with [ctrl] + v correctly
@@ -50,7 +49,6 @@ qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "pane
 
 sed -i -E "s|launchers.*|launchers=applications:systemsettings.desktop,applications:org.kde.konsole.desktop,preferred://filemanager,preferred://browser,applications:org.kde.kate.desktop|" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 
-=======
->>>>>>> dev2
+
 echo "Post provisioning resources:" > /home/$USER/Desktop/post-install-resources.txt
 echo "" >> /home/$USER/Desktop/post-install-resources.txt

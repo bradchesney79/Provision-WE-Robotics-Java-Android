@@ -17,8 +17,6 @@ Order of scripts to run:
 
 first-thing.sh
 
-optional-kde-settings.sh
-
 remove-snap.sh
 
 sublime-text.sh
@@ -27,15 +25,19 @@ android-studio
 
 ms-gpg-key.sh
 
-vscode.sh
+  vscode.sh
 
-edge.sh
+  edge.sh
 
 firefox.sh
 
 chrome.sh
 
 git.sh
+
+cura.sh
+
+optional-kde-settings.sh
 
 =====
 Follow the instructions in post-install-resources.txt in the Desktop directory-- and probably visible as an icon on the Desktop.
