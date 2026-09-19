@@ -32,3 +32,9 @@ echo '{
     }
   }
 }' | sudo tee /etc/opt/chrome/policies/managed/extension_pin.json
+
+echo '{
+  "RestoreOnStartup": 1
+}' | sudo tee /etc/opt/chrome/policies/managed/restore_tabs.json
+
+xdg-settings set default-web-browser google-chrome.desktop
