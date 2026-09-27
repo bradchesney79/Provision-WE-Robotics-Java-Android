@@ -1,49 +1,33 @@
 # Provision-WE-Robotics-Java-Android
-Scripts to automate setting up a laptop for robotics development.
+Scripts to automate setting up a laptop for robotics development on Kubuntu v26.04.
 
 =====
-Download the project
+Open the terminal, Download this project
+
+```wget -P ~/Desktop https://github.com/bradchesney79/Provision-WE-Robotics-Java-Android/archive/refs/heads/main.zip```
+
+```cd ~/Desktop```
+
+```unzip main.zip```
+
+```cd ~/Provision-WE-Robotics-Java-Android```
 
 =====
 Edit config.txt
 
+Hint: use the vi text editor right in the terminal or the Kate program in the program menu or some other text editor...
+
+=====
+View and, possibly, edit the provision.sh script to disable any scripts you do not want to run
+
 =====
 Open the terminal
 
-=====
-Run scripts as: . script-name [Enter]
-
-Order of scripts to run:
-
-first-thing.sh
-
-remove-snap.sh
-
-sublime-text.sh
-
-android-studio
-
-ms-gpg-key.sh
-
-  vscode.sh
-
-  edge.sh
-
-firefox.sh
-
-chrome.sh
-
-git.sh
-
-cura.sh
-
-optional-kde-settings.sh
+```. provision.sh```
 
 =====
 Follow the instructions in post-install-resources.txt in the Desktop directory-- and probably visible as an icon on the Desktop.
 
 =====
 Your SSH key for github will be in ~/.ssh/github/
-You want the pub key, look for the filename with ".pub"
-
-=====
+You want the public key, look for the filename with ".pub"
