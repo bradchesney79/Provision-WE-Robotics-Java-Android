@@ -20,3 +20,17 @@ sed -i -E "s|launchers.*|launchers=applications:systemsettings.desktop,applicati
 #kwallet .kwl files are only configurable via gui, turning off due to this low security needs application
 
 kwriteconfig6 --file kwalletrc --group 'Wallet' --key 'Enabled' 'false'
+
+sed -i -E "s|launchers.*|launchers=applications:systemsettings.desktop,applications:org.kde.konsole.desktop,preferred://filemanager,preferred://browser,applications:org.kde.kate.desktop,preferred:|" ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+
+#use gearlever to automagically make the Cura AppImage look native in the program menu
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+sudo wget -P /tmp/flathub.gpg https://flathub.org/repo/flathub.gpg
+
+sudo flatpak -y install flathub it.mijorus.gearlever
+
+yes | flatpak run it.mijorus.gearlever --integrate ~/Applications/Cura.AppImage
+
+sed -i 's/Categories.*/Categories=Multimedia/g' ~/.local/share/applications/ultimaker_cura.desktop
