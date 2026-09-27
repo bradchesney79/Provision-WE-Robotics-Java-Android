@@ -9,6 +9,7 @@ mkdir -p ~/.ssh/github/
 
 ssh-keygen -t ed25519 -C $GITEMAIL -f ~/.ssh/github/id_ed25519 -P ""
 
+#todo find out why this isn't being added in the script
 ssh-add ~/.ssh/github/id_ed25519
 
 sudo apt-get -y install git kdiff3
